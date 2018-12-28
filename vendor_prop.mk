@@ -212,6 +212,9 @@ service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1 \
 ro.telephony.default_network=22,20
 
+# Rescue Party
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.disable_rescue=true
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
