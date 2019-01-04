@@ -222,6 +222,51 @@ function 8937_sched_dcvs_hmp()
 }
 target=`getprop ro.board.platform`
 
+function configure_read_ahead_kb_values() {
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+
+    # Set 128 for <= 3GB &
+    # set 512 for >= 4GB targets.
+    if [ $MemTotal -le 3145728 ]; then
+        echo 256 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 256 > /sys/block/mmcblk0/queue/read_ahead_kb
+        echo 256 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+        echo 256 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
+        echo 256 > /sys/block/dm-0/queue/read_ahead_kb
+        echo 256 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 256 > /sys/block/dm-2/queue/read_ahead_kb
+        if [ -f /sys/block/mmcblk1/bdi/read_ahead_kb ]; then
+                echo 256 > /sys/block/mmcblk1/bdi/read_ahead_kb
+        fi
+        if [ -f /sys/block/mmcblk1/queue/read_ahead_kb ]; then
+                echo 256 > /sys/block/mmcblk1/queue/read_ahead_kb
+        fi
+    else
+        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
+        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+        echo 512 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
+        echo 512 > /sys/block/dm-0/queue/read_ahead_kb
+        echo 512 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 512 > /sys/block/dm-2/queue/read_ahead_kb
+        if [ -f /sys/block/mmcblk1/bdi/read_ahead_kb ]; then
+                echo 512 > /sys/block/mmcblk1/bdi/read_ahead_kb
+        fi
+        if [ -f /sys/block/mmcblk1/queue/read_ahead_kb ]; then
+                echo 512 > /sys/block/mmcblk1/queue/read_ahead_kb
+        fi
+    fi
+}
+
+function disable_core_ctl() {
+    if [ -f /sys/devices/system/cpu/cpu0/core_ctl/enable ]; then
+        echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
+    else
+        echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/disable
+    fi
+}
+
 function configure_memory_parameters() {
     # Set Memory paremeters.
     #
