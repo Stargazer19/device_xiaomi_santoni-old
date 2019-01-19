@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository": "Quantummech2000/android_kernel_santoni",
+    "target_path": "kernel/xiaomi/msm8937",
+    "branch": "rel/wolf4.5"
+  },
+  {
+    "remote": "github",
+    "repository": "aswin7469/android_vendor_xiaomi_santoni",
+    "target_path": "vendor/xiaomi",
+    "branch": "pie"
+  }
+]
