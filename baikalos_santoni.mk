@@ -16,15 +16,20 @@
 
 $(call inherit-product, device/xiaomi/santoni/full_santoni.mk)
 
-# Inherit some common RR stuff.
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+# Inherit some common stuff.
+$(call inherit-product, vendor/baikalos/config/common_full_phone.mk)
 
 PRODUCT_DEVICE := santoni
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 4X
-PRODUCT_NAME := rr_santoni
+PRODUCT_MODEL := Redmi 4
+PRODUCT_NAME := baikalos_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
+
+#Maintaner
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	DEVICE_MAINTAINERS="STARGAZER"
+
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
