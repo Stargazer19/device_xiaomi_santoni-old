@@ -373,6 +373,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libqdMetaData.system
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.pie.telephony=1
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext \
