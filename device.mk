@@ -168,9 +168,9 @@ include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    XiaomiParts \
     XiaomiShit \
-    XiaomiDoze
+    BaikalParts \
+    BaikalDoze
 
 # Display
 PRODUCT_PACKAGES += \
