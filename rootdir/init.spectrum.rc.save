@@ -236,9 +236,9 @@ on property:persist.spectrum.profile=3
 	write /proc/sys/vm/dirty_expire_centisecs 500
 	write /proc/sys/vm/dirty_writeback_centisecs 100
 
-#Ultra-Battery
-on property:persist.spectrum.profile=4
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor alucard
+# Ultra-Battery
+on property:persist.spectrum.profile=2
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
 	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
 	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
 	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 10000
@@ -252,7 +252,7 @@ on property:persist.spectrum.profile=4
 	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 20000
 	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
 
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor alucard
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
 	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
 	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
 	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 20000 1094400:20000 1209600:20000 1401000:39000
