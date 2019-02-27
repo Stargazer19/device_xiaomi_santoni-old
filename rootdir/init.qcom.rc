@@ -167,6 +167,10 @@ on boot
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    # Start RIL daemon
+    start ril-daemon
+
+
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
