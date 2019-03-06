@@ -26,11 +26,11 @@ PRODUCT_NAME := havoc_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
-#Stargazing
-HAVOC_BUILD_TYPE := Stargazing
+#Build Official Havoc-OS
+HAVOC_BUILD_TYPE := Official
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.havoc.maintainer="STARGAZER"
+	ro.havoc.maintainer="Viraj Patil(@beinstargazer)"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
