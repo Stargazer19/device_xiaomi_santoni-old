@@ -233,3 +233,7 @@ persist.sys.usb.config.extra=none
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+#Havoc
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.havoc.maintainer=STARGAZER
