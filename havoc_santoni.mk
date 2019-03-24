@@ -27,8 +27,7 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
 #Build Official Havoc-OS
-export export
-HAVOC_BUILD_TYPE := Official
+export export HAVOC_BUILD_TYPE := Official
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.havoc.maintainer=STARGAZER
