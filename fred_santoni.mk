@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The HavocOS Project
+# Copyright (C) 2018-2019 The FredOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,21 +16,20 @@
 
 $(call inherit-product, device/xiaomi/santoni/full_santoni.mk)
 
-# Inherit some common HavocOS stuff.
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit some common FredOS stuff.
+$(call inherit-product, vendor/fred/config/common.mk)
 
 PRODUCT_DEVICE := santoni
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 4
-PRODUCT_NAME := havoc_santoni
+PRODUCT_NAME := fred_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
-#Build Official Havoc-OS
-export export HAVOC_BUILD_TYPE := Official
+# Target boot animation size
+TARGET_BOOT_ANIMATION_RES := 720
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.havoc.maintainer=STARGAZER
+FRED_BUILD_TYPE=Official
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

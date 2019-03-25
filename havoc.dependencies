@@ -1,8 +1,0 @@
-[ 
- {
-    "remote":       "github",
-    "repository":   "AOSiP/platform_packages_apps_Snap",
-    "target_path":  "packages/apps/Snap",
-    "revision":     "pie"
-  }
-]
