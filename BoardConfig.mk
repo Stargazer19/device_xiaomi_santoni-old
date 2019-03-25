@@ -168,6 +168,10 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
+# Hack for remove stuffs
+$(shell rm -rf hardware/qcom/display-caf/msm8996/liblight)
+$(shell rm -rf vendor/qcom/common)
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_santoni
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
